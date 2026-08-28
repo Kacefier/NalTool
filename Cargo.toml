@@ -2,7 +2,7 @@
 name = "naltool"
 version = "4.1.0"
 edition = "2024"
-description = "A lightweight cross-platform CLI encryption tool."
+description = "A lightweight and efficient CLI encryption tool."
 license = "GPL-3.0-or-later"
 
 [dependencies]
