@@ -1,6 +1,7 @@
 #!/bin/bash
 # NalTool Installer for Linux/macOS
 # Made by Kacefier
+# Licensed under GPLv3. See LICENSE file in the root directory.
 
 set -e
 

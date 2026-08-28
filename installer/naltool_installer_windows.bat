@@ -4,6 +4,7 @@ setlocal enabledelayedexpansion
 
 :: NalTool Installer for Windows
 :: Made by Kacefier
+:: Licensed under GPLv3. See LICENSE file in the root directory.
 
 set VERSION=4.1
 set BINARY_NAME=naltool.exe

@@ -330,7 +330,7 @@ pub fn encrypt_file(input_path: &Path, output_path: &Path, password: &str, compr
     writer.write_all(&MAGIC_HEADER).map_err(|e| format!("failed to write magic header: {}", e))?;
     writer.write_u8(HEADER_VERSION).map_err(|e| format!("failed to write version: {}", e))?;
     writer.write_all(&salt).map_err(|e| format!("failed to write salt: {}", e))?;
-    writer.write_all(&base_nonce).map_err(|e| format!("failed to write base nonce: {}", e))?;  // 存储基础nonce
+    writer.write_all(&base_nonce).map_err(|e| format!("failed to write base nonce: {}", e))?;
 
     let flags = if compress { 1u8 } else { 0u8 };
     writer.write_u8(flags).map_err(|e| format!("failed to write flags: {}", e))?;
@@ -361,7 +361,6 @@ pub fn encrypt_file(input_path: &Path, output_path: &Path, password: &str, compr
             }
         }
 
-        // 组合base_nonce和计数器生成唯一nonce
         let mut chunk_nonce = base_nonce;
         let counter_bytes = nonce_counter.to_be_bytes();
         for i in 0..8 {
@@ -379,7 +378,6 @@ pub fn encrypt_file(input_path: &Path, output_path: &Path, password: &str, compr
         chunk_index += 1;
         nonce_counter += 1;
 
-        // 防止计数器溢出
         if nonce_counter == u64::MAX {
             return Err("file too large: nonce counter overflow".to_string());
         }
@@ -425,7 +423,6 @@ pub fn decrypt_file(input_path: &Path, output_path: &Path, password: &str) -> Re
     let mut salt = [0u8; SALT_LEN];
     reader.read_exact(&mut salt).map_err(|e| format!("failed to read salt: {}", e))?;
 
-    // 读取存储的基础nonce
     let mut base_nonce = [0u8; NONCE_LEN];
     reader.read_exact(&mut base_nonce).map_err(|e| format!("failed to read base nonce: {}", e))?;
 
@@ -463,7 +460,6 @@ pub fn decrypt_file(input_path: &Path, output_path: &Path, password: &str) -> Re
         let mut ciphertext = vec![0u8; chunk_len];
         reader.read_exact(&mut ciphertext).map_err(|e| format!("failed to read chunk data: {}", e))?;
 
-        // 使用相同算法重建nonce
         let mut chunk_nonce = base_nonce;
         let counter_bytes = chunk_index.to_be_bytes();
         for i in 0..8 {
@@ -727,10 +723,9 @@ mod password_input {
     use crossterm::execute;
 
     pub fn get_password(prompt: &str) -> Result<String, String> {
-        // 启用raw mode
+        // enable raw mode
         enable_raw_mode().map_err(|e| format!("failed to enable raw mode: {}", e))?;
 
-        // 隐藏光标
         let mut stdout = io::stdout();
         execute!(stdout, cursor::Hide).map_err(|e| format!("failed to hide cursor: {}", e))?;
 
