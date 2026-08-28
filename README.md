@@ -1,6 +1,6 @@
 # NalTool
 
-A lightweight cross-platform encryption tool.  
+A lightweight cross-platform CLI encryption tool.  
 
 ---
 
