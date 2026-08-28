@@ -1142,7 +1142,7 @@ fn run_interactive() {
     }
 }
 
-// main entry point
+// main functions
 fn main() {
     let cli = Cli::parse();
 
