@@ -1,5 +1,5 @@
 #!/bin/bash
-# NalTool Uninstaller for Linux/macOS
+# NalTool Uninstaller for macOS/Linux
 # Made by Kacefier
 # Licensed under GPLv3. See LICENSE file in the root directory.
 
