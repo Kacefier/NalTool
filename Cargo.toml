@@ -1,0 +1,19 @@
+[package]
+name = "naltool"
+version = "4.1.0"
+edition = "2024"
+
+[dependencies]
+aes-gcm = "0.10"
+sha2 = "0.10"
+pbkdf2 = "0.12"
+rand = "0.8"
+byteorder = "1.5"
+clap = { version = "4.5", features = ["derive"] }
+flate2 = "1.0"
+
+[target.'cfg(unix)'.dependencies]
+termios = "0.3"
+
+[target.'cfg(windows)'.dependencies]
+crossterm = "0.27"
