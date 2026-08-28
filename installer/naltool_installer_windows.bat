@@ -5,7 +5,7 @@ setlocal enabledelayedexpansion
 :: NalTool Installer for Windows
 :: Made by Kacefier
 
-set VERSION=4.0
+set VERSION=4.1
 set BINARY_NAME=naltool.exe
 set INSTALL_DIR=%USERPROFILE%\bin
 
