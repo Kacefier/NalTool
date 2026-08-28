@@ -47,8 +47,8 @@ If you cannot find a suitable executable in Releases, try cloning the repository
 
 Pre-compiled executables for the following platforms are available on the Releases page:  
 
-- Windows (x86_64)
-- Linux (x86_64)
+- Windows (amd64)
+- Linux (amd64)
 
 If your operating system is not listed, please try building manually.  
 Additionally, the repository provides installation and uninstallation scripts for both Windows and macOS/Linux platforms.  
