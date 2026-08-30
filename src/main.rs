@@ -870,8 +870,9 @@ fn detect_file_type(_path: &Path) -> Option<String> {
 // interactive interface
 fn run_interactive() {
     println!("NalTool - Made by Kacefier");
-    println!("GitHub: github.com/Kacefier/NalTool\nEmail: kacefier@zohomail.com");
     println!("Version {}", VERSION);
+    println!("GitHub: github.com/Kacefier/NalTool\nEmail: kacefier@zohomail.com");
+    println!("Note: This is free software, licensed under GPLv3+, See --help for details.");
 
     loop {
         println!();
@@ -1148,6 +1149,7 @@ fn main() {
 
     if cli.version {
         println!("NalTool version {} - Made by Kacefier", VERSION);
+        println!("This is free software, licensed under GPLv3+, See --help for details.");
         return;
     }
 
@@ -1183,7 +1185,17 @@ fn main() {
         println!("  naltool -e file.txt -c -l 9            Encrypt with max compression");
         println!("  naltool --new                          Generate NalKey file");
         println!();
-        println!("NOTE: Keys via -k cannot contain spaces. Use NalKey or interactive input for keys with spaces.");
+        println!("Note: Keys via -k cannot contain spaces. Use NalKey or interactive input for keys with spaces.");
+        println!();
+        println!("Copyright and license:");
+        println!("  Copyright (C) 2026 Kacefier");
+        println!("  NalTool is free software licensed under the GNU General Public");
+        println!("  License, version 3 or (at your option) any later version.");
+        println!("  This program is distributed in the hope that it will be useful,");
+        println!("  but WITHOUT ANY WARRANTY; without even the implied warranty of");
+        println!("  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.");
+        println!();
+        println!("  See <https://www.gnu.org/licenses/> for the full license text.");
         return;
     }
 
@@ -1300,6 +1312,7 @@ fn main() {
     }
 
     println!("NalTool - Made by Kacefier");
+    println!("This is free software, licensed under GPLv3+, See --help for details.");
     println!();
     println!("Try 'naltool --help' for more information.");
 }
