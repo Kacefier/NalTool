@@ -32,7 +32,7 @@ use flate2::Compression;
 use flate2::write::{GzEncoder, GzDecoder};
 
 // constants
-const VERSION: &str = "4.1";
+const VERSION: &str = "4.1.1";
 const MAGIC_HEADER: [u8; 4] = *b"NALT";
 const HEADER_VERSION: u8 = 2;
 const SALT_LEN: usize = 16;

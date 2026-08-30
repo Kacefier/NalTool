@@ -1,6 +1,6 @@
 [package]
 name = "naltool"
-version = "4.1.0"
+version = "4.1.1"
 edition = "2024"
 description = "A lightweight and efficient CLI encryption tool."
 license = "GPL-3.0-or-later"
