@@ -5,7 +5,7 @@
 
 set -e
 
-VERSION="4.1"
+VERSION="4.1.1"
 BINARY_NAME="naltool"
 INSTALL_DIR="/usr/local/bin"
 

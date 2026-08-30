@@ -6,7 +6,7 @@ setlocal enabledelayedexpansion
 :: Made by Kacefier
 :: Licensed under GPLv3. See LICENSE file in the root directory.
 
-set VERSION=4.1
+set VERSION=4.1.1
 set BINARY_NAME=naltool.exe
 set INSTALL_DIR=%USERPROFILE%\bin
 
