@@ -21,7 +21,7 @@ Written in Rust, it is distributed as a single binary file with no external depe
 
 ### Security
 
-NalTool uses **AES-256-GCM** for authenticated encryption, with keys derived from your password via **PBKDF2-HMAC-SHA256**.  
+NalTool uses AES-256-GCM for authenticated encryption, with keys derived from your password via PBKDF2-HMAC-SHA256.  
 
 | Parameter | Value |
 |-----------|-------|
@@ -98,7 +98,7 @@ NalTool 是一款轻量级加解密工具，支持文本和文件加解密。
 
 ### 安全性
 
-NalTool 使用 **AES-256-GCM** 进行认证加密，密钥由密码经 **PBKDF2-HMAC-SHA256** 派生。  
+NalTool 使用 AES-256-GCM 进行认证加密，密钥由密码经 PBKDF2-HMAC-SHA256 派生。  
 
 | 参数 | 取值 |
 |------|------|
