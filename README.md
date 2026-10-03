@@ -19,6 +19,21 @@ Written in Rust, it is distributed as a single binary file with no external depe
 - Optional Gzip compression
 - NalKey key file management support
 
+### Security
+
+NalTool uses **AES-256-GCM** for authenticated encryption, with keys derived from your password via **PBKDF2-HMAC-SHA256**.  
+
+| Parameter | Value |
+|-----------|-------|
+| Cipher | AES-256-GCM (authenticated encryption) |
+| Key derivation | PBKDF2-HMAC-SHA256 |
+| Iterations | 1,000,000 |
+| Salt | 16 bytes, random per operation |
+| Nonce | 12 bytes, random base + per-chunk counter derivation |
+| Randomness source | OS CSPRNG (`OsRng`) |
+| Chunk size | 1 MiB per chunk, each with its own GCM tag |
+| File container | `NALT` magic + version + salt + base nonce + flags + chunked ciphertext |
+
 ### Quick Start
 
 First, download the appropriate executable file and installation script from the [Releases](https://github.com/Kacefier/NalTool/releases) page.  
@@ -80,6 +95,21 @@ NalTool 是一款轻量级加解密工具，支持文本和文件加解密。
 - 加密和解密文件  
 - 可选的 Gzip 压缩  
 - 支持 NalKey 密钥文件管理  
+
+### 安全性
+
+NalTool 使用 **AES-256-GCM** 进行认证加密，密钥由密码经 **PBKDF2-HMAC-SHA256** 派生。  
+
+| 参数 | 取值 |
+|------|------|
+| 加密算法 | AES-256-GCM（认证加密） |
+| 密钥派生 | PBKDF2-HMAC-SHA256 |
+| 迭代次数 | 1,000,000 |
+| 盐值 | 16 字节，每次操作随机生成 |
+| 随机数 | 12 字节，随机基准值 + 按块派生的计数器 |
+| 随机源 | 操作系统 CSPRNG（`OsRng`） |
+| 分块大小 | 每块 1 MiB，每块拥有独立的 GCM 认证标签 |
+| 文件容器 | `NALT` 魔数 + 版本 + 盐值 + 基准随机数 + 标志位 + 分块密文 |
 
 ### 快速开始
 
